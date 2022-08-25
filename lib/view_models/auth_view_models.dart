@@ -69,7 +69,7 @@ class AuthViewModelViewModel extends BaseViewModel {
       final jsonDecoded = json.decode(response.body);
       String returnedToken = jsonDecoded['data']['user']['token'];
       await _storage.setString("token", returnedToken);
-      AppConfigService.offAllNamed("dca_plan");
+      AppConfigService.offAllNamed("index");
       appState = AppState.none;
       notifyListeners();
     } catch (e) {

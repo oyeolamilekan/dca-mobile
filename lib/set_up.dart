@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'network/http/api_client.dart';
 import 'services/auth_service.dart';
+import 'services/market_service.dart';
 import 'services/plans_service.dart';
 import 'services/transaction_service.dart';
 import 'services/utils/jwt_tokens.dart';
@@ -39,5 +40,9 @@ Future<void> setUpLocator() async {
 
   locator.registerLazySingleton<TransactionService>(
     () => TransactionService(),
+  );
+
+  locator.registerLazySingleton<MarketService>(
+    () => MarketService(),
   );
 }

@@ -12,4 +12,11 @@ class TransactionService {
       auth: true,
     );
   }
+
+  Future<Response> fetchAllTransaction() async {
+    return _client.get(
+      "transaction",
+      auth: true,
+    );
+  }
 }

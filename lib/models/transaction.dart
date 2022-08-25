@@ -1,6 +1,5 @@
 class Transaction {
   String? sId;
-  String? plan;
   String? message;
   late String status;
   late PriceMap total;
@@ -13,7 +12,6 @@ class Transaction {
 
   Transaction(
       {this.sId,
-      this.plan,
       this.message,
       required this.status,
       required this.total,
@@ -26,7 +24,6 @@ class Transaction {
 
   Transaction.fromJson(Map<String, dynamic> json) {
     sId = json['_id'];
-    plan = json['plan'];
     status = json['status'].toUpperCase();
     message = json['message'];
     total = PriceMap.fromJson(json['total']);
@@ -41,7 +38,6 @@ class Transaction {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['_id'] = sId;
-    data['plan'] = plan;
     data['status'] = status;
     data['message'] = message;
     data['total'] = total.toJson();
@@ -76,6 +72,59 @@ class PriceMap {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['unit'] = unit;
     data['amount'] = amount;
+    return data;
+  }
+}
+
+class Plan {
+  String? sId;
+  String? user;
+  String? market;
+  String? name;
+  int? amount;
+  bool? isActive;
+  String? schedule;
+  String? createdAt;
+  String? updatedAt;
+  int? iV;
+
+  Plan(
+      {this.sId,
+      this.user,
+      this.market,
+      this.name,
+      this.amount,
+      this.isActive,
+      this.schedule,
+      this.createdAt,
+      this.updatedAt,
+      this.iV});
+
+  Plan.fromJson(Map<String, dynamic> json) {
+    sId = json['_id'];
+    user = json['user'];
+    market = json['market'];
+    name = json['name'];
+    amount = json['amount'];
+    isActive = json['isActive'];
+    schedule = json['schedule'];
+    createdAt = json['createdAt'];
+    updatedAt = json['updatedAt'];
+    iV = json['__v'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['_id'] = sId;
+    data['user'] = user;
+    data['market'] = market;
+    data['name'] = name;
+    data['amount'] = amount;
+    data['isActive'] = isActive;
+    data['schedule'] = schedule;
+    data['createdAt'] = createdAt;
+    data['updatedAt'] = updatedAt;
+    data['__v'] = iV;
     return data;
   }
 }

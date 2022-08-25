@@ -18,7 +18,7 @@ class SplashViewModelViewModel extends BaseViewModel {
       await _storage.removeKey("token");
       AppConfigService.offAllNamed("authentication");
     } else {
-      AppConfigService.offAllNamed("dca_plan");
+      AppConfigService.offAllNamed("index");
     }
   }
 }

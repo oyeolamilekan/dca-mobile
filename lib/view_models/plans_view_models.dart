@@ -25,6 +25,20 @@ class PlansViewModels extends BaseViewModel {
     }
   }
 
+  Future<void> togglePlan(Plan plan) async {
+    try {
+      plan.isActive = !plan.isActive;
+      await _planService.togglePlan(
+        plan.id,
+        {"isActive": plan.isActive},
+      );
+      AppConfigService.successSnackBar("Plan successfully updated.");
+    } catch (e) {
+      AppConfigService.errorSnackBar(e.toString());
+    }
+    notifyListeners();
+  }
+
   Future<void> fetchAllPlansAction() async {
     try {
       final response = await _planService.getAllPlans();
