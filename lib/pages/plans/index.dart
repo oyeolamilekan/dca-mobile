@@ -5,7 +5,6 @@ import 'package:stacked/stacked.dart';
 
 import '../../config/app_config.dart';
 import '../../view_models/index_view_model.dart';
-import '../../extension/num.dart';
 import 'transactions.dart';
 
 class IndexPage extends StatelessWidget {

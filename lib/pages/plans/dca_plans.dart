@@ -1,9 +1,9 @@
-import 'package:dca_mobile/config/app_config.dart';
-import 'package:dca_mobile/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:stacked/stacked.dart';
 
+import '../../widgets/button.dart';
+import '../../config/app_config.dart';
 import '../../view_models/plans_view_models.dart';
 import '../../widgets/error_widget.dart';
 import '../../widgets/loading_widgtet.dart';
@@ -149,13 +149,15 @@ class DCAPlan extends StatelessWidget {
                                   const Divider(),
                                   PlanConfig(
                                     widgetKey: const Text("Creation Date"),
-                                    value: Text(plan.createdAt
-                                        .turnStringToDate("dd, MMM, yyyy.")),
+                                    value: Text(
+                                      plan.createdAt
+                                          .turnStringToDate("dd, MMM, yyyy."),
+                                    ),
                                   ),
                                   const Divider(),
                                   PlanConfig(
                                     widgetKey: const Text("Is Active"),
-                                    value: Switch(
+                                    value: Switch.adaptive(
                                       value: plan.isActive,
                                       onChanged: (bool value) {
                                         viewModel.togglePlan(plan);
