@@ -32,7 +32,7 @@ class IndexPage extends StatelessWidget {
           bottomNavigationBar: BottomNavigationBar(
             backgroundColor: Colors.white,
             onTap: (index) => viewModel.onItemTapped(index),
-            selectedItemColor: AppConfigService.hexToColor("#035872"),
+            selectedItemColor: AppConfigService.hexToColor("#ffb300"),
             type: BottomNavigationBarType.fixed,
             unselectedFontSize: 12,
             selectedFontSize: 12,

@@ -272,7 +272,10 @@ class DCAPlan extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   height: 7.h,
                   width: 6.7.h,
-                  color: AppConfigService.hexToColor("#ffb300"),
+                  decoration: BoxDecoration(
+                    color: AppConfigService.hexToColor("#ffb300"),
+                    shape: BoxShape.circle,
+                  ),
                   child: Container(
                     alignment: Alignment.center,
                     child: const Icon(FeatherIcons.plus),
