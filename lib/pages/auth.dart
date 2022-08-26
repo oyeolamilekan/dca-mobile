@@ -71,6 +71,7 @@ class Authentication extends StatelessWidget {
                                     title: 'Quidax Secret Key',
                                     textEditingController:
                                         viewModel.apiKeyTextController,
+                                    obscureText: true,
                                     validator: (String value) {
                                       if (value.isEmpty) {
                                         return 'A.P.I key is required boss';
